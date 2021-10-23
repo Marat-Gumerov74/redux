@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
 import {addCustomerAction, removeCustomerAction} from "./store/customerReduser";
+import {fetchCustomers} from "./asyncActions/customers";
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
         <button onClick={() => addCash(Number(prompt()))}>Пополнить счет</button>
         <button onClick={() => getCash(Number(prompt()))}>Снять со счета</button>
         <button onClick={() => addCustomer((prompt()))}>Добавить клиента</button>
-
+        <button onClick={() => dispatch(fetchCustomers()) }> Получить клиентов из базы</button>
       </div>
       <div>
         {customers.length > 0 ?
