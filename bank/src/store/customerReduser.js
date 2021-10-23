@@ -16,3 +16,6 @@ export const customerReduser = (state = defaultState, action) => {
       return state
   }
 }
+
+export const addCustomerAction = (payLoad) => ({type: ADD_CUSTOMER, payLoad});
+export const removeCustomerAction = (payLoad) => ({type: REMOVE_CUSTOMER, payLoad});
