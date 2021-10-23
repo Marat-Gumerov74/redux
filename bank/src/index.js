@@ -5,26 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
+import {store} from "./store";
 
-
-
-const defaultState = {
-  cash: 0,
-}
-
-const reduser = (state = defaultState, action) => {
-  switch (action.type) {
-    case 'ADD_CASH':
-      return {...state, cash: state.cash + action.payLoad}
-    case 'GET_CASH':
-      return {...state, cash: state.cash - action.payLoad}
-
-    default:
-      return state
-  }
-}
-
-const store = createStore(reduser);
 
 ReactDOM.render(
   <React.StrictMode>
